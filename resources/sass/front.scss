@@ -1,0 +1,57 @@
+　ul {
+    text-align: right;
+  }
+  
+  li {
+    display: inline;
+    padding: 0 10px;
+  }
+
+  body {
+    width: 100%;
+    height:100vh;
+    background-image: url('/image/alison-marras-ElGnfom4tIw-unsplash.jpg');  
+    background-position: center center; 
+    background-repeat: no-repeat;  
+    background-attachment: fixed; 
+    background-size: cover;
+  }
+
+  .box{
+    position: relative;
+  }
+
+  .box h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  #vegetable-image {
+    margin-bottom: 30px;
+    width: 700px;
+    height: 400px;
+    display: block;
+    margin:auto;
+  }
+
+  #vegetable-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-contents {
+    padding: 100px 50px 50px 100px;
+    display: block;
+    margin-top: 30px;
+    background-color: #fff;
+  } 
+
+  .text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  

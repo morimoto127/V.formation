@@ -26,3 +26,9 @@ Route::controller(RecipesController::class)->prefix('user')->group(function() {
 
 use App\Http\Controllers\User\ProfileController;
 Route::get('user/profile/edit', [ProfileController::class, 'add']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+use App\Http\Controllers\RecipeController as PublicRecipeController;
+Route::get('/', [PublicRecipeController::class, 'index'])->name('recipe.index');
