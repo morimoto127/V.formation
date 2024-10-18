@@ -22,11 +22,16 @@ body {
   position: relative;
 }
 
-.box h3 {
+.box h1 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.bold {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 #vegetable-image {
@@ -43,10 +48,11 @@ body {
 }
 
 .card-contents {
-  padding: 100px 50px 50px 100px;
+  padding: 70px 50px 50px 70px;
   display: block;
-  margin-top: 30px;
+  width: 800px;
   background-color: #fff;
+  margin: 30px auto 100px auto;
 }
 
 .text {
@@ -54,4 +60,18 @@ body {
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 20px;
+}
+
+.w-50 {
+  width: 50%;
+  margin-left: auto;
+}
+
+.bl {
+  border-left: 15px solid #e8dd15;
+  padding-left: 10px;
+}
+
+.card {
+  margin-left: 50px;
 }

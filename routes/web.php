@@ -31,4 +31,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 use App\Http\Controllers\RecipeController as PublicRecipeController;
-Route::get('/', [PublicRecipeController::class, 'index'])->name('recipe.index');
+Route::get('/', [PublicRecipeController::class, 'front'])->name('recipe.front');

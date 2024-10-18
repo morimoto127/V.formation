@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
-    public function index()
+    public function front()
     {
        // dd("ここが動いた");
-        return view('index');
+        return view('front');
     }
 }
