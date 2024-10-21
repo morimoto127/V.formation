@@ -54,6 +54,17 @@
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
+            <footer class="container-fluid mt-5">
+                <div class="row">
+                    <p class="Copyright">©2024 V.formation All Rights Reserved.</P>
+                    <div class="col-10 offset-1">
+                        <img src="{{ asset('/image/archive-fill.svg') }}" class="archive">
+                        <img src="{{ asset('/image/facebook.svg') }}" class="facebook">
+                        <img src="{{ asset('/image/google.svg') }}" class="google">                      
+                    </div>
+                </div>
+                <small>develop an application</small>
+            </footer>
         </div>
     </body>
 </html>
