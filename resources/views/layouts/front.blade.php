@@ -56,14 +56,17 @@
             </main>
             <footer class="container-fluid mt-5">
                 <div class="row">
-                    <p class="Copyright">©2024 V.formation All Rights Reserved.</P>
-                    <div class="col-10 offset-1">
+                    <div class="col-5 Copyright">©2024 V.formation All Rights Reserved.
+                    </div>
+                    <div class="col-2">
                         <img src="{{ asset('/image/archive-fill.svg') }}" class="archive">
                         <img src="{{ asset('/image/facebook.svg') }}" class="facebook">
                         <img src="{{ asset('/image/google.svg') }}" class="google">                      
                     </div>
+                    <div class="col-5" text-end">
+                        <small>develop an application</small>
+                    </div>
                 </div>
-                <small>develop an application</small>
             </footer>
         </div>
     </body>

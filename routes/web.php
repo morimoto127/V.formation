@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 use App\Http\Controllers\User\RecipesController;
 Route::controller(RecipesController::class)->prefix('user')->group(function() {
-    Route::get('recipes/create', 'add');
+    Route::get('recipes/create', 'add')->middleware('auth');
     Route::get('recipes/edit', 'edit');
     Route::get('recipes', 'index');
 });

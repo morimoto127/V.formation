@@ -28,35 +28,16 @@
     </div>
 </div>
 <div class="row row-cols-3 row-cols-md-3 g-4">
-    <div class="col">
-        <div class="card">
-            <img src="{{asset('/image/もちもち米粉とお豆腐ドーナツ.jpeg')}}" class="card-img-top">
-            <div class="card-body">
-                <h2 class="card-title">米粉のお豆腐ドーナツ</h2>
-                <p><img src="{{asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png')}}" alt="時計の画像">10分以内</p>
-                <p class="user">名前</p>
+    @for ($i = 0; $i < 6; $i++)
+        <div class="col">
+            <div class="card">
+                <img src="{{asset('/image/もちもち米粉とお豆腐ドーナツ.jpeg')}}" class="card-img-top">
+                <div class="card-body">
+                    <h2 class="card-title">米粉のお豆腐ドーナツ</h2>
+                    <p><img src="{{asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png')}}" alt="時計の画像">10分以内</p>
+                    <p class="user">名前</p>
+                </div>
             </div>
-        </div>
-    </div> 
-    <div class="col">
-        <div class="card">
-            <img src="{{asset('/image/もちもち米粉とお豆腐ドーナツ.jpeg')}}" class="card-img-top">
-            <div class="card-body">
-                <h2 class="card-title">米粉のお豆腐ドーナツ</h2>
-                <p><img src="{{asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png')}}" alt="時計の画像">10分以内</p>
-                <p class="user">名前</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="{{asset('/image/もちもち米粉とお豆腐ドーナツ.jpeg')}}" class="card-img-top">
-            <div class="card-body">
-                <h2 class="card-title">米粉のお豆腐ドーナツ</h2>
-                <p><img src="{{asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png')}}" alt="時計の画像">10分以内</p>
-                <p class="user">名前</p>
-            </div>
-        </div>
-    </div>
-</div>
+        </div> 
+    @endfor    
 @endsection
