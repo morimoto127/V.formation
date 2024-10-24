@@ -29,7 +29,7 @@
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">V.formation</a>
+                    <a class="navbar-brand" href="{{url('/')}}">V.formation</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -37,14 +37,23 @@
                             <ul class="navbar-nav ms-auto"></ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">レシピ投稿</a>
+                                    <a class="nav-link active" aria-current="page" href="{{url('user/recipes/create')}}">レシピ投稿</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">プロフィール編集</a>
+                                    <a class="nav-link" href="{{url('user/profile/edit')}}">プロフィール編集</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">ログイン</a>
-                                </li>
+                                @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('login')}}">ログイン</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('register')}}">会員登録</a>
+                                    </li>
+                                @else
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('logout')}}">ログアウト</a>
+                                    </li>
+                                @endguest
                             </ul>
                         </div>
                 </div>

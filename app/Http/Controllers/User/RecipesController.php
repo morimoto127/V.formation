@@ -11,6 +11,10 @@ class RecipesController extends Controller
     {
         return view('user.recipes.create');
     }
+    public function create(Request $request)
+    {
+        return redirect('user/recipes/create');
+    }
     public function edit()
     {
         return view('user.recipes.edit');

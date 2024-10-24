@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.front')
 @section('title', 'プロフィール編集')
 @section('content')
     <div class="container">

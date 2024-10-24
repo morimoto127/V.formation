@@ -18,14 +18,15 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\User\RecipesController;
-Route::controller(RecipesController::class)->prefix('user')->group(function() {
-    Route::get('recipes/create', 'add')->middleware('auth');
+Route::controller(RecipesController::class)->prefix('user')->name('user.')->middleware('auth')->group(function() {
+    Route::get('recipes/create', 'add')->name('recipes.add');
+    Route::post('recipes/create', 'create')->name('recipes.create');
     Route::get('recipes/edit', 'edit');
     Route::get('recipes', 'index');
 });
 
 use App\Http\Controllers\User\ProfileController;
-Route::get('user/profile/edit', [ProfileController::class, 'add']);
+Route::get('user/profile/edit', [ProfileController::class, 'edit'])->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
