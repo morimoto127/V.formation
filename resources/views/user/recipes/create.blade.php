@@ -32,6 +32,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2">調理時間</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="time" value="{{ old('time') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">作り方</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="recipe" rows="30">{{ old('recipe') }}</textarea>
