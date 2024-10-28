@@ -22,7 +22,7 @@ Route::controller(RecipesController::class)->prefix('user')->name('user.')->midd
     Route::get('recipes/create', 'add')->name('recipes.add');
     Route::post('recipes/create', 'create')->name('recipes.create');
     Route::get('recipes/edit', 'edit');
-    Route::get('recipes', 'index');
+    Route::get('recipes', 'index')->name('recipes.index');
 });
 
 use App\Http\Controllers\User\ProfileController;
