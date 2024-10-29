@@ -10,7 +10,7 @@
         <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>レシピ新規作成</h1>
+                <h1>レシピ編集・削除</h1>
                 <form action="{{ route('user.recipes.create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
@@ -52,10 +52,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-10">
-                            <input type="hidden" name="id" value="{{ $recipes_form->id }}">
-                            @csrf
-                            <input type="submit" class="btn btn-primary" value="更新">
+                        <div class="col-md-3">
+                            <div style="text-align: right">
+                                <input type="hidden" name="id" value="{{ $recipes_form->id }}">
+                                @csrf
+                                <input type="submit" class="btn btn-primary" value="更新">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <a class="btn btn-primary" href="{{ route('user.recipes.delete', ['id' => $recipes_form->id]) }}" role="button">削除</a>
                         </div>
                     </div>
                 </form>

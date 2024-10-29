@@ -13,7 +13,7 @@
         <div class="row row-cols-3 row-cols-md-3 g-4">
             @foreach($posts as $recipes)
                 <div class="col">
-                    <div class="card">
+                    <a class="card" href="{{ route('user.recipes.edit', ['id' => $recipes->id]) }}">
                         @if ($recipes->image_path)
                             <img src="{{ asset('storage/image/' . $recipes->image_path) }}" class="card-img-top">
                         @endif
@@ -27,7 +27,7 @@
                             </div>
                             <p class="user">名前</p>
                         </div>
-                    </div>
+                    </a>
                 </div> 
             @endforeach    
         </div>

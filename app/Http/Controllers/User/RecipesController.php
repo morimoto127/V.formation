@@ -35,7 +35,7 @@ class RecipesController extends Controller
         return redirect('user/recipes');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
         $recipes = Recipes::find($request->id);
         if (empty($recipes)) {
@@ -75,6 +75,16 @@ class RecipesController extends Controller
 
         // 該当するデータを上書きして保存する
         $recipes->fill($recipes_form)->save();
+
+        return redirect('user/recipes');
+    }
+
+    public function delete(Request $request)
+    {
+        $recipes = Recipes::find($request->id);
+
+        // 削除する
+        $recipes->delete();
 
         return redirect('user/recipes');
     }
