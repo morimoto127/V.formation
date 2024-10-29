@@ -4,14 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>レシピの編集</h1>
+                <h1>レシピの編集・削除</h1>
             </div>
         </div>
         <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>レシピ編集・削除</h1>
-                <form action="{{ route('user.recipes.create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user.recipes.update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)

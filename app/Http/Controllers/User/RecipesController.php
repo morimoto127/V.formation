@@ -60,7 +60,6 @@ class RecipesController extends Controller
         // Validationをかける
         $this->validate($request, Recipes::$rules);
         $recipes = Recipes::find($request->id);
-        // 送信されてきたフォームデータを格納する
         $recipes_form = $request->all();
 
         if ($request->file('image')) {
