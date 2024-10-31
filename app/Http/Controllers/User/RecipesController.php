@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Recipes;
+use App\Models\Recipe;
 
 
 class RecipesController extends Controller
@@ -16,20 +16,24 @@ class RecipesController extends Controller
 
     public function create(Request $request)
     {
-        $this->validate($request, Recipes::$rules);
+        $this->validate($request, Recipe::$rules);
 
-        $recipes = new Recipes;
+        $recipes = new Recipe;
         $form = $request->all();
 
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $recipes->image_path = basename($path);
+        } else {
+            $recipes->image_path ="noimage.png"; 
         } 
+         
 
         unset($form['_token']);
         unset($form['image']);
 
         $recipes->fill($form);
+        $recipes->user_id = \Auth::id();
         $recipes->save();
 
         return redirect('user/recipes');
@@ -37,7 +41,7 @@ class RecipesController extends Controller
 
     public function edit(Request $request)
     {
-        $recipes = Recipes::find($request->id);
+        $recipes = Recipe::find($request->id);
         if (empty($recipes)) {
             abort(404);
         }
@@ -48,9 +52,9 @@ class RecipesController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != null) {
-            $posts = Recipes::where('title', $cond_title)->get();
+            $posts = Recipe::where('title', $cond_title)->get();
         } else {
-            $posts = Recipes::all();
+            $posts = Recipe::all();
         }
         return view('user.index' ,['posts' => $posts, 'cond_title' => $cond_title]);
     }
@@ -58,8 +62,8 @@ class RecipesController extends Controller
     public function update(Request $request)
     {
         // Validationをかける
-        $this->validate($request, Recipes::$rules);
-        $recipes = Recipes::find($request->id);
+        $this->validate($request, Recipe::$rules);
+        $recipes = Recipe::find($request->id);
         $recipes_form = $request->all();
 
         if ($request->file('image')) {
@@ -80,7 +84,7 @@ class RecipesController extends Controller
 
     public function delete(Request $request)
     {
-        $recipes = Recipes::find($request->id);
+        $recipes = Recipe::find($request->id);
 
         // 削除する
         $recipes->delete();

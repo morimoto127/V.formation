@@ -13,7 +13,7 @@
     <div class="card-contents">
         <p class="bold">V.formationはヴィーガンやグルテンフリーのレシピを共有する場所です。<br>体に優しい、環境に優しい食生活をシェアしましょう！</p>
         <P class="bold">動物性の食品、小麦、大麦、ライ麦不使用のレシピを投稿して皆で共有しましょう。</p>
-        <a class="btn btn-warning" href="{{url('user/recipes')}}">レシピ一覧</button>
+        <a class="btn btn-warning" href="{{url('user/recipes')}}">レシピ一覧</a>
     </div> 
 </div> 
 <div class="w-50">
