@@ -61,6 +61,25 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="nickname" class="col-md-4 col-form-label text-md-end">ニックネーム</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nickname" required autocomplete="nickname"> 
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="gender" class="col-md-4 col-form-label text-md-end">性別</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="gender" required autocomplete="gender"> 
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="introduction" class="col-md-4 col-form-label text-md-end">プロフィール文</label>
+                            <div class="col-md-6">
+                                <textarea class="form-control" name="introduction" rows="20"></textarea>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

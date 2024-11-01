@@ -7,6 +7,24 @@
                 <h2>マイページ</h2>
             </div>
         </div>
+        <div class="form-group row">
+            <label class="col-md-2" for="name">ニックネーム</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2" for="gender">性別</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" name="gender" value="{{ $profile_form->gendre }}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-2" for="introduction">プロフィール文</label>
+            <div class="col-md-10">
+                <textarea class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textarea>
+            </div>
+        </div>
         <div class="row">
             <h1>レシピ投稿一覧</h1>
         </div>
