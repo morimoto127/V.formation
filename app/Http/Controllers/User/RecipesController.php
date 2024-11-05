@@ -20,7 +20,7 @@ class RecipesController extends Controller
 
         $recipes = new Recipe;
         $form = $request->all();
-
+    
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
             $recipes->image_path = basename($path);

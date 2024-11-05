@@ -8,21 +8,21 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-md-2" for="name">ニックネーム</label>
+            <label class="col-md-2" for="nickname">ニックネーム</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
+                <input type="text" class="form-control" name="nickname" value="{{ $user_form->nickname }}">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2" for="gender">性別</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="gender" value="{{ $profile_form->gendre }}">
+                <input type="text" class="form-control" name="gender" value="{{ $user_form->gender }}">
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2" for="introduction">プロフィール文</label>
             <div class="col-md-10">
-                <textarea class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textarea>
+                <textarea class="form-control" name="introduction" rows="20">{{ $user_form->introduction }}</textarea>
             </div>
         </div>
         <div class="row">
