@@ -28,8 +28,12 @@ Route::controller(RecipesController::class)->prefix('user')->name('user.')->midd
 });
 
 use App\Http\Controllers\User\ProfileController;
+Route::controller(ProfileController::class)->middleware('auth')->group(function() {
+    Route::get('profile', 'profile')->name('profile');
+});
 Route::get('user/profile/edit', [ProfileController::class, 'edit'])->middleware('auth');
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

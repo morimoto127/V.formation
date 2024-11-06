@@ -9,13 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function create(Request $request)
+    public function profile(Request $request)
     {
         $user = Auth::user();
-        if ($user) {
-            $nickname = $user->nickname;
-        }
-        return view('user.recipes',  ['user_form' => $user]);
+        return view('user.index',  ['user_form' => $user]);
     }
 
 

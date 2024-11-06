@@ -10,19 +10,19 @@
         <div class="form-group row">
             <label class="col-md-2" for="nickname">ニックネーム</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="nickname" value="{{ $user_form->nickname }}">
+                {{ $user_form->nickname }}
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2" for="gender">性別</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="gender" value="{{ $user_form->gender }}">
+                {{ $user_form->gender }}
             </div>
         </div>
         <div class="form-group row">
             <label class="col-md-2" for="introduction">プロフィール文</label>
             <div class="col-md-10">
-                <textarea class="form-control" name="introduction" rows="20">{{ $user_form->introduction }}</textarea>
+               {{ $user_form->introduction }}
             </div>
         </div>
         <div class="row">
