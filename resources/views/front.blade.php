@@ -13,7 +13,7 @@
     <div class="card-contents">
         <p class="bold">V.formationはヴィーガンやグルテンフリーのレシピを共有する場所です。<br>体に優しい、環境に優しい食生活をシェアしましょう！</p>
         <P class="bold">動物性の食品、小麦、大麦、ライ麦不使用のレシピを投稿して皆で共有しましょう。</p>
-        <a class="btn btn-warning" href="{{url('user/recipes')}}">レシピ一覧</a>
+        <a class="btn btn-warning" href="{{url('')}}">レシピ一覧</a>
     </div> 
 </div> 
 <div class="w-50">
@@ -27,17 +27,26 @@
         <p>小麦や大麦、ライ麦などに含まれるタンパク質であるグルテンを<br>一定レベルで摂取しない食事法</p>
     </div>
 </div>
-<div class="row row-cols-3 row-cols-md-3 g-4">
-    @for ($i = 0; $i < 6; $i++)
-        <div class="col">
-            <div class="card">
-                <img src="{{asset('/image/もちもち米粉とお豆腐ドーナツ.jpeg')}}" class="card-img-top">
+<div class="row row-cols-3 row-cols-md-3 g-4"> 
+    @foreach($recipes as $recipe)
+        <a href="{{ route('user.recipes.edit', ['id' => $recipe->id]) }}">
+            <div class="col card">
+                
+                @if ($recipe->image_path)
+                    <img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top">
+                @endif
                 <div class="card-body">
-                    <h2 class="card-title">米粉のお豆腐ドーナツ</h2>
-                    <p><img src="{{asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png')}}" alt="時計の画像">10分以内</p>
-                    <p class="user">名前</p>
+                    <div class="card-title">
+                        {{ Str::limit($recipe->title, 20) }}
+                    </div>
+                    <div class="time">
+                        <img src="{{ asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png') }}">
+                        {{ Str::limit($recipe->time, 10) }}
+                    </div>
+                    <p class="user">{{ $recipe->user->nickname }}</p>
                 </div>
+                
             </div>
-        </div> 
-    @endfor    
+        </a> 
+    @endforeach       
 @endsection

@@ -40,11 +40,14 @@
                                     <a class="nav-link active" aria-current="page" href="{{url('user/recipes/create')}}">レシピ投稿</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{url('user/recipes')}}">マイページ</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{url('user/profile/edit')}}">プロフィール編集</a>
                                 </li>
                                 @guest
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{url('login')}}">ログイン</a>
+                                        <a class="nav-link" href="{{url('/')}}">ログイン</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{url('register')}}">会員登録</a>

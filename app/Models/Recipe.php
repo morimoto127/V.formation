@@ -16,4 +16,8 @@ class Recipe extends Model
         'time' => 'required',
         'recipe' => 'required',
     );
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

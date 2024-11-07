@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use Illuminate\Support\Facades\Auth;
 
 
 class RecipesController extends Controller
@@ -52,11 +53,12 @@ class RecipesController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != null) {
-            $posts = Recipe::where('title', $cond_title)->get();
+            $recipes = Recipe::where('title', $cond_title)->get();
         } else {
-            $posts = Recipe::all();
+            $recipes = Recipe::all();
         }
-        return view('user.index' ,['posts' => $posts, 'cond_title' => $cond_title]);
+        $user_form = Auth::user();
+        return view('user.index' ,['recipes' => $recipes, 'cond_title' => $cond_title, 'user_form' => $user_form]);
     }
 
     public function update(Request $request)

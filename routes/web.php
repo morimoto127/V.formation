@@ -21,7 +21,7 @@ use App\Http\Controllers\User\RecipesController;
 Route::controller(RecipesController::class)->prefix('user')->name('user.')->middleware('auth')->group(function() {
     Route::get('recipes/create', 'add')->name('recipes.add');
     Route::post('recipes/create', 'create')->name('recipes.create');
-    Route::get('recipes/edit', 'edit')->name('recipes.edit');
+    Route::get('recipes/edit/{id}', 'edit')->name('recipes.edit');
     Route::post('recipes/edit', 'update')->name('recipes.update');
     Route::get('recipes', 'index')->name('recipes.index');
     Route::get('recipes/delete', 'delete')->name('recipes.delete');
