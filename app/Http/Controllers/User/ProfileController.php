@@ -18,8 +18,8 @@ class ProfileController extends Controller
 
     public function edit(Request $request)
     {
-
-        return view('user/profile/edit');
+        $user = Auth::user();
+        return view('user.profile', ['user_form' => $user]);
     }
 }
 

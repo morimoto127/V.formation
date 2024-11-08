@@ -31,7 +31,6 @@
     @foreach($recipes as $recipe)
         <a href="{{ route('user.recipes.edit', ['id' => $recipe->id]) }}">
             <div class="col card">
-                
                 @if ($recipe->image_path)
                     <img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top">
                 @endif
@@ -43,9 +42,10 @@
                         <img src="{{ asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png') }}">
                         {{ Str::limit($recipe->time, 10) }}
                     </div>
-                    <p class="user">{{ $recipe->user->nickname }}</p>
+                    <p class="user">
+                        <a href="{{ route('user.recipes.index', ['id' => $recipe->id]) }}">{{ $recipe->user->nickname }}</a>
+                    </p>
                 </div>
-                
             </div>
         </a> 
     @endforeach       

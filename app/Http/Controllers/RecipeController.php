@@ -9,8 +9,8 @@ class RecipeController extends Controller
 {
     public function front()
     {
-       // dd("ここが動いた");
-       $recipes = Recipe::all();
+       // idの降順（idが大きい方から）６件を取得する;
+       $recipes = Recipe::orderBy('id','desc')->take(6)->get(); 
         return view('front', ['recipes' => $recipes]);
     }
 }
