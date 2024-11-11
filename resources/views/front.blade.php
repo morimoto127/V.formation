@@ -42,11 +42,10 @@
                         <img src="{{ asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png') }}">
                         {{ Str::limit($recipe->time, 10) }}
                     </div>
-                    <p class="user">
-                        <a href="{{ route('user.recipes.index', ['id' => $recipe->id]) }}">{{ $recipe->user->nickname }}</a>
-                    </p>
+                    <a href="{{ route('user.recipes.edit', ['id' => $recipe->id]) }}" class="card-link">{{ $recipe->user->nickname }}</a>
                 </div>
             </div>
         </a> 
-    @endforeach       
+    @endforeach 
+</div>      
 @endsection

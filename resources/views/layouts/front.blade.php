@@ -75,7 +75,7 @@
                         <img src="{{ asset('/image/facebook.svg') }}" class="facebook">
                         <img src="{{ asset('/image/google.svg') }}" class="google">                      
                     </div>
-                    <div class="col-5" text-end">
+                    <div class="col-5 text-end">
                         <small>develop an application</small>
                     </div>
                 </div>

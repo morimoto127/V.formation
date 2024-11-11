@@ -21,6 +21,18 @@ class ProfileController extends Controller
         $user = Auth::user();
         return view('user.profile', ['user_form' => $user]);
     }
+
+    public function update(Request $request)
+    {
+        // User Modelからデータを取得する
+        $user = User::find($request->id);
+        //送信されてきたフォームデーターを格納する
+        $user_form = $request->all();
+        unset($user_form['_token']);
+        //該当するデータを上書き保存する
+        $user->fill($user_form)->save();
+        return redirect('user/recipes');
+    }
 }
 
     

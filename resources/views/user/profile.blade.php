@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h1>プロフィール編集</h1>
-                <form action="{{ route('user.profile.edit') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user.profile.update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -14,15 +14,15 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="name">ニックネーム</label>
+                        <label class="col-md-2" for="nickname">ニックネーム</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ $user_form->name }}">
+                            <input type="text" class="form-control" name="nickname" value="{{ $user_form->nickname }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="gender" value="{{ $user_form->gendre }}">
+                            <input type="text" class="form-control" name="gender" value="{{ $user_form->gender }}">
                         </div>
                     </div>
                     <div class="form-group row">

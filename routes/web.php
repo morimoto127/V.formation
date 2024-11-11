@@ -31,6 +31,7 @@ use App\Http\Controllers\User\ProfileController;
 Route::controller(ProfileController::class)->middleware('auth')->group(function() {
     Route::get('profile', 'profile')->name('profile');
     Route::get('user/profile/edit','edit')->name('user.profile.edit');
+    Route::post('user/profile/edit', 'update')->name('user.profile.update');
 });
 Auth::routes();
 
