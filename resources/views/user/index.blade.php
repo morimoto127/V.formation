@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h1>マイページ</h1>
+                <h1>プロフィール</h1>
             </div>
         </div>
         <div class="form-group row">
@@ -27,6 +27,20 @@
         </div>
         <div class="row">
             <h2>レシピ投稿一覧</h2>
+        </div>
+        <div class="col-md-8">
+            <form action="{{ route('user.recipes.index') }}" method="get">
+                <div class="form-group row">
+                    <label class="col-md-2">タイトル</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
+                    </div>
+                    <div class="col-md-2">
+                        @csrf
+                        <input type="submit" class="btn btn-primary" value="検索">
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="row row-cols-3 row-cols-md-3 g-4">
             @foreach($recipes as $recipe)

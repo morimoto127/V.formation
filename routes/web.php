@@ -40,3 +40,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 use App\Http\Controllers\RecipeController as PublicRecipeController;
 Route::get('/', [PublicRecipeController::class, 'front'])->name('recipe.front');
+Route::get('/recipe', [PublicRecipeController::class, 'index'])->name('recipe.index');

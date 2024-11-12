@@ -13,4 +13,10 @@ class RecipeController extends Controller
        $recipes = Recipe::orderBy('id','desc')->take(6)->get(); 
         return view('front', ['recipes' => $recipes]);
     }
+
+    public function index(Request $request)
+    {
+        $recipes = Recipe::all();
+        return view('index', ['recipes' => $recipes]);
+    }
 }
