@@ -47,7 +47,7 @@
                             </li>
                             @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('/')}}">ログイン</a>
+                                    <a class="nav-link" href="{{url('login')}}">ログイン</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('register')}}">会員登録</a>

@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title', 'マイページ')
+@section('title', 'レシピ投稿一覧')
 @section('content')
     <div class="container">
         <div class="row">
@@ -44,9 +44,8 @@
         </div>
         <div class="row row-cols-3 row-cols-md-3 g-4">
             @foreach($recipes as $recipe)
-            <a href="{{ route('user.recipes.edit', ['id' => $recipe->id]) }}">
+            <div class="menu">
                 <div class="col card">
-                    
                     @if ($recipe->image_path)
                         <img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top">
                     @endif
@@ -58,11 +57,11 @@
                             <img src="{{ asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png') }}">
                             {{ Str::limit($recipe->time, 10) }}
                         </div>
-                        <p class="user">{{ $user_form->nickname }}</p>
-                    </div>
-                    
+                        <a href="{{ route('user.recipes.index', ['id' => $recipe->id]) }}" class="card-link">{{ $recipe->user->nickname }}</a>
+                    </div> 
+                    <a href="{{ route('user.recipes.edit', ['id' => $recipe->id]) }}" class="stretched-link"></a> 
                 </div>
-            </a> 
+            </div> 
             @endforeach    
         </div>
     </div>

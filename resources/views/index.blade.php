@@ -7,6 +7,7 @@
     </div>
     <div class="row row-cols-3 row-cols-md-3 g-4">
         @foreach($recipes as $recipe)
+        <div class="menu">
             <div class="col card">
                 @if ($recipe->image_path)
                     <img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top">
@@ -19,9 +20,11 @@
                         <img src="{{ asset('/image/Free Clock icon part 2無料の時計のアイコン 2.png') }}">
                         {{ Str::limit($recipe->time, 10) }}
                     </div>
-                    <p class="user">{{ $recipe->user->nickname }}</p>
+                    <a href="{{ route('user.recipes.index', ['id' => $recipe->id]) }}" class="card-link">{{ $recipe->user->nickname }}</a>
                 </div>
+                <a href="{{ route('recipe.show', ['id' => $recipe->id]) }}" class="stretched-link"></a> 
             </div>
+        </div>
         @endforeach    
     </div>
 </div>

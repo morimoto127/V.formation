@@ -19,4 +19,10 @@ class RecipeController extends Controller
         $recipes = Recipe::all();
         return view('index', ['recipes' => $recipes]);
     }
+
+    public function show($id)
+    {
+        $recipe = Recipe::find($id);
+        return view('recipe', ['recipe' => $recipe]);
+    }
 }
