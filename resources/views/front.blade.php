@@ -27,14 +27,14 @@
         <p>小麦や大麦、ライ麦などに含まれるタンパク質であるグルテンを<br>一定レベルで摂取しない食事法</p>
     </div>
 </div>
-<div class="row row-cols-3 row-cols-md-3 g-4"> 
+<div class="r-contents"> 
     @foreach($recipes as $recipe)
-        <div class="menu">
-            <div class="col card">
+        <div class="r-cont">
+            <a href="{{ route('recipe.show', ['id' => $recipe->id]) }}" class="">
                 @if ($recipe->image_path)
-                    <img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top">
+                    <div class="r-img"><img src="{{ asset('storage/image/' . $recipe->image_path) }}" class="card-img-top"></div>
                 @endif
-                <div class="card-body">
+                <div class="r-body">
                     <div class="card-title">
                         {{ Str::limit($recipe->title, 20) }}
                     </div>
@@ -44,8 +44,7 @@
                     </div>
                     <a href="{{ route('user.recipes.index', ['id' => $recipe->id]) }}">{{ $recipe->user->nickname }}</a>
                 </div>
-                <a href="{{ route('recipe.show', ['id' => $recipe->id]) }}" class="stretched-link"></a> 
-            </div>
+            </a>
         </div>
     @endforeach 
 </div>      

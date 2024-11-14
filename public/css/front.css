@@ -78,9 +78,33 @@ body {
   padding-left: 10px;
 }
 
-.menu {
-  padding-left: 50px;
-  padding-right: 50px;
+.r-contents {
+  display: flex;
+  width: 1000px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.r-contents .r-cont {
+  width: 32%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.r-contents .r-cont .r-img {
+  position: relative;
+  overflow: hidden;
+  padding-top: 75%;
+}
+.r-contents .r-cont .r-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.r-contents .r-cont .r-body {
+  padding: 5px;
+  background: #fff;
 }
 
 .time {

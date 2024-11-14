@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// use App\Http\Controllers\Auth\LoginController;
+// Route::post('login', 'Auth\LoginController@login')->name('login.post');
+// Route::group(['middleware' => 'auth'], function(){
+     
+//     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+// });
+
 use App\Http\Controllers\User\RecipesController;
 Route::controller(RecipesController::class)->prefix('user')->name('user.')->middleware('auth')->group(function() {
     Route::get('recipes/create', 'add')->name('recipes.add');
@@ -42,3 +49,13 @@ use App\Http\Controllers\RecipeController as PublicRecipeController;
 Route::get('/', [PublicRecipeController::class, 'front'])->name('recipe.front');
 Route::get('/recipe', [PublicRecipeController::class, 'index'])->name('recipe.index');
 Route::get('/recipes/{id}', [PublicRecipeController::class, 'show'])->name('recipe.show');
+
+Route::get('logout', function ()
+{
+auth()->logout();
+Session()->flush();
+
+return Redirect::to('/');
+
+
+})->name('logout');
