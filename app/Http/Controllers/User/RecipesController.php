@@ -55,7 +55,7 @@ class RecipesController extends Controller
         if ($cond_title != null) {
             $recipes = Recipe::where('title', $cond_title)->get();
         } else {
-            $recipes = Recipe::all();
+            $recipes = Recipe::orderBy('id','desc')->get();;
         }
         $user_form = Auth::user();
         return view('user.index' ,['recipes' => $recipes, 'cond_title' => $cond_title, 'user_form' => $user_form]);

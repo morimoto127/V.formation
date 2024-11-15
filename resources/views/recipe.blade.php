@@ -21,11 +21,11 @@
             <div class="row">
                 <label class="col-md-1" for="time">調理時間</label>
                 <div class="col-md-4">
-                    <p class="time">{{ $recipe->time}}</p>
+                    {{ $recipe->time}}
                 </div>
             </div>
             <div class="row">
-                <label class="col-md-1" for="time">作り方</label>
+                <label class="col-md-8 mx-auto" for="recipe">作り方</label>
                 <div class="col-md-8 mx-auto">
                     <p class="recipe">{{ Str::limit($recipe->recipe, 650)}}</p>
                 </div>
