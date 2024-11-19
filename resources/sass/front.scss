@@ -82,6 +82,12 @@ h1 {
   padding-left: 10px;
 }
 
+.r-index {
+  margin-top: 70px;
+  margin-bottom: 25px;
+  font-size: 33px;
+}
+
 label {
   font-size: medium;
   font-family: fantasy;
@@ -119,6 +125,13 @@ label {
   }
 }
 
+.material {
+  margin-bottom: 25px;
+}
+
+.cook {
+  margin-bottom: 25Px;
+}
 
 .time {
   margin-top: 50px;
@@ -126,6 +139,14 @@ label {
 
 .user {
   margin-left: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.recipe {
+  white-space: pre-wrap;
 }
 
 footer {
@@ -146,13 +167,4 @@ footer {
 .form-group {
   margin-bottom: 1rem;
 }
-
-a {
-  text-decoration: none;
-}
-
-
-
-
-
 

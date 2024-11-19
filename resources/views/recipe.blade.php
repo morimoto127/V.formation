@@ -2,7 +2,11 @@
 @section('title', 'レシピ詳細')
 @section('content')
 <div class="container">
-    <h1>{{$recipe->title}}</h1>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <h1>{{$recipe->title}}</h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-10 mx-auto">
             <div class="row">
@@ -14,7 +18,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label class="col-md-1" for="ingredient">材料</label>
+                    <label class="material col-md-1" for="ingredient">材料</label>
                     <p class="ingredient">{{ Str::limit($recipe->ingredient, 100)}}</p>
                 </div>
             </div>
@@ -25,7 +29,7 @@
                 </div>
             </div>
             <div class="row">
-                <label class="col-md-8 mx-auto" for="recipe">作り方</label>
+                <label class="cook col-md-8 mx-auto" for="recipe">作り方</label>
                 <div class="col-md-8 mx-auto">
                     <p class="recipe">{{ Str::limit($recipe->recipe, 650)}}</p>
                 </div>

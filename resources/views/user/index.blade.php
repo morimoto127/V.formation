@@ -8,33 +8,33 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-md-2" for="nickname">ニックネーム</label>
-        <div class="col-md-10">
+        <label class="col-md-2 text-end" for="nickname">ニックネーム</label>
+        <div class="col-md-8">
             {{ $user_form->nickname }}
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-md-2" for="gender">性別</label>
-        <div class="col-md-10">
+        <label class="col-md-2 text-end" for="gender">性別</label>
+        <div class="col-md-8">
             {{ $user_form->gender }}
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-md-2" for="introduction">プロフィール文</label>
+        <label class="col-md-2 text-end" for="introduction">プロフィール文</label>
         <div class="col-md-10">
             {{ $user_form->introduction }}
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <h2>レシピ投稿一覧</h2>
+            <h2 class="r-index">レシピ投稿一覧</h2>
         </div>
     </div>
     <div class="col-md-8">
         <form action="{{ route('user.recipes.index') }}" method="get">
             <div class="form-group row">
-                <label class="col-md-2">タイトル</label>
-                <div class="col-md-8">
+                <label class="col-md-3 text-end">タイトル</label>
+                <div class="col-md-7">
                     <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                 </div>
                 <div class="col-md-2">
